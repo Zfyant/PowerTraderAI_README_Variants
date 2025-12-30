@@ -1,37 +1,31 @@
 <div align="center">
 
 # 🤖 PowerTrader AI
-### The Trading Bot That Thinks Like a Human (But Faster)
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge&logo=none)](https://github.com/yourusername/powertrader)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-FFD43B?style=for-the-badge&logo=python&logoColor=blue)](https://python.org)
-[![License](https://img.shields.io/badge/License-Apache%202.0-green?style=for-the-badge)](LICENSE)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/yourusername/powertrader)
-
-<br>
-
-**Fully Automated Crypto Trading** • **Pattern-Matching Intelligence** • **Smart DCA**
-
-<a href="#-core-philosophy">
-  <img src="https://img.shields.io/badge/_How_It_Works-black?style=flat-square&logo=target" height="35" />
-</a>&nbsp;&nbsp;
-<a href="#-quick-start-guide">
-  <img src="https://img.shields.io/badge/_Get_Started-black?style=flat-square&logo=rocket" height="35" />
-</a>&nbsp;&nbsp;
-<a href="#-support-the-project">
-  <img src="https://img.shields.io/badge/_Support_Us-black?style=flat-square&logo=ko-fi" height="35" />
-</a>
-
-<br>
-<br>
+### <font color="orange">The Trading Bot That Thinks Like a Human <i>(But Faster)</i></font>
 
 </div>
 
----
+<div align="center">
+  <button style="background-color: #329235ff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: default;">🪙 Fully Automated Crypto Trading</button> 
+  <button style="background-color: #2e8a8dff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: default;">🤖 Pattern-Matching Intelligence</button> 
+  <button style="background-color: #4c4eafff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: default;">🧠 Smart DCA</button>
+</div>
+
+<div align="center">
+
+[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge&logo=none)](https://github.com/yourusername/powertrader) [![Python](https://img.shields.io/badge/Python-3.10%2B-FFD43B?style=for-the-badge&logo=python&logoColor=blue)](https://python.org) [![License](https://img.shields.io/badge/License-Apache%202.0-orange?style=for-the-badge)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/yourusername/powertrader)
+
+<br>
 
 ## 🆚 Why This Bot is Different
 
+
+<br>
+
 Most bots are "black boxes" or just guess based on RSI. **PowerTrader AI** is transparent.
+
+</div>
 
 <div align="center">
   <table align="center">
@@ -54,23 +48,25 @@ Most bots are "black boxes" or just guess based on RSI. **PowerTrader AI** is tr
   </table>
 </div>
 
+<div align="center">
+
 <br>
 
 ## 🧠 Core Philosophy: The "Perfect Memory"
 
-<div align="center">
-  <blockquote>
-    "It works a lot like human intuition—but with a perfect memory."
-  </blockquote>
 </div>
 
 <br>
 
 Imagine looking at a chart and saying: *"Hey, I've seen this exact pattern 50 times before. Usually, price goes up after this."*
 
-That is exactly what PowerTrader AI does. It scans **every single candle in history** across multiple timeframes (1H to 1W) to find the closest matches to the current moment.
+That is exactly what PowerTrader AI does. 
+
+It scans **every single candle in history** across multiple timeframes (1H to 1W) to find the closest matches to the current moment.
 
 <div align="center">
+
+<br>
 
 | ⏱️ Timeframe | 🔍 What It Sees |
 | :--- | :--- |
@@ -79,9 +75,7 @@ That is exactly what PowerTrader AI does. It scans **every single candle in hist
 | **1 Day** | Daily market cycles |
 | **1 Week** | Major trend reversals |
 
-</div>
-
----
+<br>
 
 ## ⚡ How It Actually Trades (The 3 Stages)
 
@@ -105,12 +99,13 @@ That is exactly what PowerTrader AI does. It scans **every single candle in hist
   </tr>
 </table>
 
----
+
+<br>
 
 ## 📦 Quick Start & Deep Dive
 
-<div align="center">
-  <h3>From Zero to Hero in 3 Steps</h3>
+<br>
+
 </div>
 
 <details>
@@ -223,11 +218,11 @@ PowerTrader isn't a neural network in the traditional "black box" sense. It uses
 
 <br>
 
+<div align="center">
+
 ## ⚙️ Workflow Summary
 
-Once configured, your daily loop is simple:
-
-<div align="center">
+Once configured, your daily loop is simple!
 
 <table>
   <tr>
@@ -251,9 +246,7 @@ Once configured, your daily loop is simple:
   </tr>
 </table>
 
-</div>
-
----
+<br>
 
 ## 📊 The Neural Dashboard (Cheat Sheet)
 
@@ -265,9 +258,9 @@ When you see the logs, here is what the signals mean:
 | 🟢 **LONG 3+** | Strong buy signal | **Ready to Buy** ✅ |
 | 🔴 **SHORT 1+** | Sell pressure detected | **Do Not Enter** 🚫 |
 
-> **The Golden Ticket:** `LONG 3+` AND `SHORT 0` = 🚀 **TRADE EXECUTES**
+ **The Golden Ticket 🎫 :** `LONG 3+` AND `SHORT 0` = 🚀 **TRADE EXECUTES**
 
----
+<br>
 
 ## ❤️ Support the Project
 
