@@ -14,7 +14,7 @@
 
 <div align="center">
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge&logo=none)](https://github.com/yourusername/powertrader) [![Python](https://img.shields.io/badge/Python-3.10%2B-FFD43B?style=for-the-badge&logo=python&logoColor=blue)](https://python.org) [![License](https://img.shields.io/badge/License-Apache%202.0-orange?style=for-the-badge)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/yourusername/powertrader)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge&logo=none)](https://github.com/garagesteve1155/PowerTrader_AI) [![Python](https://img.shields.io/badge/Python-3.10%2B-FFD43B?style=for-the-badge&logo=python&logoColor=blue)](https://github.com/garagesteve1155/PowerTrader_AI) [![License](https://img.shields.io/badge/License-Apache%202.0-orange?style=for-the-badge)](https://github.com/garagesteve1155/PowerTrader_AI) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/garagesteve1155/PowerTrader_AI)
 
 <br>
 
@@ -58,11 +58,12 @@ Most bots are "black boxes" or just guess based on RSI. **PowerTrader AI** is tr
 
 <br>
 
-Imagine looking at a chart and saying: *"Hey, I've seen this exact pattern 50 times before. Usually, price goes up after this."*
-
-That is exactly what PowerTrader AI does. 
-
-It scans **every single candle in history** across multiple timeframes (1H to 1W) to find the closest matches to the current moment.
+> [!TIP]
+> Imagine looking at a chart and saying: *"Hey, I've seen this exact pattern 50 times before. Usually, price goes up after this."*
+> 
+> That is exactly what PowerTrader AI does. 
+> 
+> It scans **every single candle in history** across multiple timeframes (1H to 1W) to find the closest matches to the current moment.
 
 <div align="center">
 
@@ -118,8 +119,16 @@ It scans **every single candle in history** across multiple timeframes (1H to 1W
 3. **CRITICAL:** Check the box that says: **“Add Python to PATH”**.
 4. Click **Install Now**.
 
+> [!CAUTION]
+> **CRITICAL WARNING:** If you have any crypto holdings in your Robinhood account, you **MUST** either transfer them out or sell them to cash **BEFORE** using this bot.
+>
+> *Why?* The bot tracks performance based on your cash balance and its own trade history. Existing coins will confuse its logic. **Start with a clean slate (Cash Only).**
+
 ### 2. Get the Code
-> **Note:** Please download files manually for now. (Avoid "Download ZIP" due to a known GitHub structure quirk).
+
+> [!NOTE]
+> **Note:** Please download files manually for now. 
+> **Avoid "Download ZIP" due to a known GitHub structure quirk.**
 
 1. Create a folder: `C:\PowerTraderAI`
 2. Download `pt_hub.py` and all repo files into it.
@@ -154,6 +163,9 @@ Once the Hub is open, go to **Settings** and follow this exact sequence:
 ### 1. Basic Setup
 - **Main Neural Folder**: Set this to the folder containing `pt_hub.py` (e.g., `C:\PowerTraderAI`).
 - **Coins**: Select **BTC** to start.
+
+> [!IMPORTANT]
+> **Note on Folders:** PowerTrader uses a simple structure. **BTC** lives in the main folder, and any other coin you add (like ETH, DOGE) will automatically get its own subfolder created inside it.
 
 ### 2. Robinhood API Setup
 *This connects the bot to your account safely.*
@@ -205,11 +217,14 @@ PowerTrader isn't a neural network in the traditional "black box" sense. It uses
 - **Input:** It looks at the current candle pattern.
 - **Process:** It finds the top matches from history (1H to 1W timeframes).
 - **Prediction:** It calculates a weighted average of what happened *after* those matches.
+- **Visuals:** On the chart, you will see **Blue Lines (Predicted Lows)** and **Orange Lines (Predicted Highs)** for each timeframe.
 - **Feedback Loop:** After every candle close, it re-evaluates its past predictions and adjusts the weights of those memories.
 
 ### Signal Strength Levels
 - **LONG 0-2**: Weak correlation. The AI sees some bullish patterns, but not enough to risk capital.
-- **LONG 3+**: **High Confidence.** The AI has found multiple historical matches that resulted in price increases across different timeframes.
+- **LONG 3+ (THE TRIGGER):** **High Confidence.**
+  - *Technical Definition:* The current **Ask Price** has dropped *below* the **Predicted Low (Blue Line)** on at least 3 different timeframes simultaneously.
+  - *Meaning:* The asset is statistically oversold compared to historical patterns.
 - **SHORT 1+**: Bearish pressure detected. The bot will **never** buy if the Short signal is > 0.
 
 > **The Entry Rule:** `LONG >= 3` AND `SHORT == 0`
