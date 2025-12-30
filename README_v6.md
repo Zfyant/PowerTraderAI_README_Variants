@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🤖 PowerTrader AI
+# 🤖 PowerTrader AI <a href="https://github.com/garagesteve1155/PowerTrader_AI" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 
 ### <font color="orange">The Trading Bot That Thinks Like a Human <i>(But Faster)</i></font>
 
