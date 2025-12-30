@@ -58,7 +58,6 @@ Most bots are "black boxes" or just guess based on RSI. **PowerTrader AI** is tr
 
 <br>
 
-> [!TIP]
 > Imagine looking at a chart and saying: *"Hey, I've seen this exact pattern 50 times before. Usually, price goes up after this."*
 > 
 > That is exactly what PowerTrader AI does. 
@@ -119,14 +118,12 @@ Most bots are "black boxes" or just guess based on RSI. **PowerTrader AI** is tr
 3. **CRITICAL:** Check the box that says: **“Add Python to PATH”**.
 4. Click **Install Now**.
 
-> [!CAUTION]
 > **CRITICAL WARNING:** If you have any crypto holdings in your Robinhood account, you **MUST** either transfer them out or sell them to cash **BEFORE** using this bot.
 >
 > *Why?* The bot tracks performance based on your cash balance and its own trade history. Existing coins will confuse its logic. **Start with a clean slate (Cash Only).**
 
 ### 2. Get the Code
 
-> [!NOTE]
 > **Note:** Please download files manually for now. 
 > **Avoid "Download ZIP" due to a known GitHub structure quirk.**
 
@@ -164,7 +161,6 @@ Once the Hub is open, go to **Settings** and follow this exact sequence:
 - **Main Neural Folder**: Set this to the folder containing `pt_hub.py` (e.g., `C:\PowerTraderAI`).
 - **Coins**: Select **BTC** to start.
 
-> [!IMPORTANT]
 > **Note on Folders:** PowerTrader uses a simple structure. **BTC** lives in the main folder, and any other coin you add (like ETH, DOGE) will automatically get its own subfolder created inside it.
 
 ### 2. Robinhood API Setup
