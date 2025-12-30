@@ -107,57 +107,125 @@ That is exactly what PowerTrader AI does. It scans **every single candle in hist
 
 ---
 
-## 📦 Quick Start Guide
+## 📦 Quick Start & Deep Dive
 
 <div align="center">
-  <h3>Ready to launch? 🚀</h3>
+  <h3>From Zero to Hero in 3 Steps</h3>
 </div>
 
-### 📋 Pre-Flight Checklist
-- [ ] **Python 3.10+** installed?
-- [ ] **Robinhood Crypto** account ready? (Empty or sold to cash)
-- [ ] **Coffee** brewed? ☕
-
-<br>
-
-### 🛠️ Installation
-
 <details>
-<summary><b>🔻 Click here to expand Step-by-Step Instructions</b></summary>
+<summary><b>�️ Step 1: Installation & Prerequisites (Click to Expand)</b></summary>
 <br>
 
-#### 1️⃣ Get the Code
-1.  Create a folder: `C:\PowerTraderAI`
-2.  Download `pt_hub.py` and all repo files into it.
-3.  *(Do not use "Download ZIP" yet, please download files manually)*
+### 1. Install Python
+1. Go to **python.org** and download Python for Windows (3.10 or newer).
+2. Run the installer.
+3. **CRITICAL:** Check the box that says: **“Add Python to PATH”**.
+4. Click **Install Now**.
 
-#### 2️⃣ Install Dependencies
+### 2. Get the Code
+> **Note:** Please download files manually for now. (Avoid "Download ZIP" due to a known GitHub structure quirk).
+
+1. Create a folder: `C:\PowerTraderAI`
+2. Download `pt_hub.py` and all repo files into it.
+
+### 3. Install Dependencies
 Open **Command Prompt** (`cmd`) and run:
 
 ```bash
 cd C:\PowerTraderAI
 
-# If using Python 3.12+, run this first:
+# If using Python 3.12+, run this first to avoid distutils errors:
 python -m pip install setuptools
 
 # Install bot requirements:
 python -m pip install -r requirements.txt
 ```
 
-#### 3️⃣ Launch the Hub
+### 4. Launch the Hub
 This is your command center.
-
 ```bash
 python pt_hub.py
 ```
 
 </details>
 
----
+<details>
+<summary><b>⚙️ Step 2: Configuration & Robinhood API Keys (Click to Expand)</b></summary>
+<br>
 
-## ⚙️ Configuration & Usage
+Once the Hub is open, go to **Settings** and follow this exact sequence:
 
-Once the Hub is running, follow this simple workflow:
+### 1. Basic Setup
+- **Main Neural Folder**: Set this to the folder containing `pt_hub.py` (e.g., `C:\PowerTraderAI`).
+- **Coins**: Select **BTC** to start.
+
+### 2. Robinhood API Setup
+*This connects the bot to your account safely.*
+
+1. Click **Robinhood API Setup** inside Settings.
+2. Click **Generate Keys**.
+3. **Copy the Public Key** shown in the wizard.
+4. Go to your **Robinhood Account** -> **Security** -> **API Keys**.
+5. Add a new key and paste the Public Key.
+6. **Important:** Enable "Trading" permissions when asked.
+7. Robinhood will show you an **API Key** (starts with `rh...`). Copy it.
+8. Paste it back into the bot's wizard and click **Save**.
+9. Close the wizard and click **SAVE** on the main Settings screen.
+
+> **Security Note:** Your keys are stored locally in `r_key.txt` and `r_secret.txt`. Keep these safe!
+
+</details>
+
+<details>
+<summary><b>🧠 Step 3: Training & Running the Bot (Click to Expand)</b></summary>
+<br>
+
+### The Workflow
+1. **Train All**: Click this button in the Hub.
+   - The AI scans the entire history of the selected coins.
+   - It builds a memory database of patterns.
+   - *Wait for this to finish.*
+
+2. **Start All**: Click this when training is complete.
+   - Launches `pt_thinker.py` (The Brain).
+   - Launches `pt_trader.py` (The Executioner).
+
+### Adding More Coins Later
+1. Open **Settings**.
+2. Add a new coin (e.g., ETH).
+3. **Save**.
+4. **Train All** again (it needs to learn the new coin's history).
+5. **Start All**.
+
+</details>
+
+<details>
+<summary><b>📈 Deep Dive: Understanding the Signals (Click to Expand)</b></summary>
+<br>
+
+### The "Instance-Based" Engine
+PowerTrader isn't a neural network in the traditional "black box" sense. It uses **kNN (k-Nearest Neighbors) with Reliability Weighting**.
+
+- **Input:** It looks at the current candle pattern.
+- **Process:** It finds the top matches from history (1H to 1W timeframes).
+- **Prediction:** It calculates a weighted average of what happened *after* those matches.
+- **Feedback Loop:** After every candle close, it re-evaluates its past predictions and adjusts the weights of those memories.
+
+### Signal Strength Levels
+- **LONG 0-2**: Weak correlation. The AI sees some bullish patterns, but not enough to risk capital.
+- **LONG 3+**: **High Confidence.** The AI has found multiple historical matches that resulted in price increases across different timeframes.
+- **SHORT 1+**: Bearish pressure detected. The bot will **never** buy if the Short signal is > 0.
+
+> **The Entry Rule:** `LONG >= 3` AND `SHORT == 0`
+
+</details>
+
+<br>
+
+## ⚙️ Workflow Summary
+
+Once configured, your daily loop is simple:
 
 <div align="center">
 
@@ -169,22 +237,16 @@ Once the Hub is running, follow this simple workflow:
   </tr>
   <tr>
     <td align="left">
-      1. Go to <b>Settings</b>.<br>
-      2. Set <b>Main Neural Folder</b>.<br>
-      3. Select <b>BTC</b>.<br>
-      4. Setup <b>Robinhood API</b> keys.<br>
-      5. <b>SAVE!</b>
+      Configure keys & coins.<br>
+      (One-time setup)
     </td>
     <td align="left">
-      1. Click <b>Train All</b>.<br>
-      2. Wait for the AI to study history.<br>
-      3. Grab a snack 🥨.
+      Click <b>Train All</b>.<br>
+      Updates the "memory."
     </td>
     <td align="left">
-      1. Click <b>Start All</b>.<br>
-      2. The Hub launches the <b>Thinker</b>.<br>
-      3. The Hub launches the <b>Trader</b>.<br>
-      4. <b>Profit.</b>
+      Click <b>Start All</b>.<br>
+      Sit back and monitor.
     </td>
   </tr>
 </table>
